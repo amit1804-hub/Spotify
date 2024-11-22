@@ -1,6 +1,6 @@
 -- SQL
 
-create table spotify
+**create table spotify**
 (
 Artist	varchar(350),
 Track	varchar(350),
@@ -30,7 +30,7 @@ most_playedon VARCHAR(50)
 );
 
 
-
+```
 select * from spotify;
 
 -- EDA
@@ -46,7 +46,7 @@ group by 2;
 
 delete from spotify
 where duration_min = 0.51;
-
+```
 
 -- -------------------------------
 -- Data Analysis Easy Level -- 
@@ -54,38 +54,38 @@ where duration_min = 0.51;
 
 
 -- Q.1 Retrieve the names of all tracks that have more than 1 billion streams.
-
+```
 select * from spotify
 where stream > 1000000000;
-  
+ ``` 
 -- Q.2 List all albums along with their respective artists.
-
+```
 select  album,artist,count(*)
 from spotify
 group by 1,2
 order by 3 desc ;
- 
+ ```
 -- Q.3 Get the total number of comments for tracks where licensed = TRUE.
-
+```
 
 select track,
 	sum(comments) as total_comments 
 from spotify
 	where licensed = 'true'
 group by 1;
-  
+```  
  --Q.4 Find all tracks that belong to the album type single.
-
+```
 select * from spotify
 where album_type  ilike 'single';
-
+```
 -- Q.5 Count the total number of tracks by each artist.
- 
+``` 
 select artist,count(*) as total_track
 from spotify
 group by 1
 order by 2 desc ;
-
+```
 
 -- -------------------------------
 -- Medium Level question
